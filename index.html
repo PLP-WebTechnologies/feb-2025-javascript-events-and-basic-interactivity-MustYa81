@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 6 Assignment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Week 6 Assignment</h1>
+      <p>JavaScript Event Handling & Interactive Elements Assignment</p>
+    </header>
+
+    <div class="sections">
+      <!-- Event Handling Section -->
+      <section class="lab-section">
+        <h2>Event Handling 🎈</h2>
+        
+        <div class="section-content">
+          <div class="subsection">
+            <h3>Button Click</h3>
+            <button id="clickButton" class="button primary">Click Me!</button>
+            <p>Click count: <span id="clickCount">0</span></p>
+          </div>
+
+          <div class="subsection">
+            <h3>Hover Effects</h3>
+            <div class="button-row">
+              <button class="lab-button hover-blue">Hover Blue</button>
+              <button class="lab-button hover-pink">Hover Pink</button>
+              <button class="lab-button hover-green">Hover Green</button>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Keypress Detection</h3>
+            <p>Press any key on the keyboard...</p>
+            <div class="key-display">
+              Last key pressed: <span id="lastKey">None yet</span>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Secret Interaction 🤫</h3>
+            <button id="secretButton" class="button outline">Find the Secret</button>
+            <p class="hint">Hint: Try a double-click or long press...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Elements Section -->
+      <section class="lab-section">
+        <h2>Interactive Elements 🎮</h2>
+        
+        <div class="section-content">
+          <div class="subsection">
+            <h3>Color Changing Button</h3>
+            <button id="colorButton" class="button color-purple">Change My Color</button>
+          </div>
+
+          <div class="subsection">
+            <h3>Image Carousel</h3>
+            <div class="carousel">
+              <div class="carousel-content">
+                <div class="carousel-inner" id="carouselInner">
+                  <div class="carousel-item bg-purple">Slide 1</div>
+                  <div class="carousel-item bg-blue">Slide 2</div>
+                  <div class="carousel-item bg-pink">Slide 3</div>
+                  <div class="carousel-item bg-green">Slide 4</div>
+                  <div class="carousel-item bg-orange">Slide 5</div>
+                </div>
+              </div>
+              <div class="carousel-controls">
+                <button id="prevButton" class="carousel-button">&lt;</button>
+                <button id="nextButton" class="carousel-button">&gt;</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="subsection">
+            <h3>Tabbed Content</h3>
+            <div class="tabs">
+              <div class="tab-list">
+                <button class="tab-button active" data-tab="tab1">First Tab</button>
+                <button class="tab-button" data-tab="tab2">Second Tab</button>
+                <button class="tab-button" data-tab="tab3">Third Tab</button>
+              </div>
+              <div class="tab-content">
+                <div id="tab1" class="tab-panel active">
+                  <p>This is the first tab content.</p>
+                </div>
+                <div id="tab2" class="tab-panel">
+                  <p>Welcome to the second tab.</p>
+                </div>
+                <div id="tab3" class="tab-panel">
+                  <p>Finally, here's the third tab. Try clicking between tabs to see smooth transitions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Form Validation Section -->
+      <section class="lab-section">
+        <h2>Form Validation 📋</h2>
+        
+        <form id="validationForm" class="form">
+          <div class="form-group">
+            <label for="username">Username <span class="required">*</span></label>
+            <input type="text" id="username" name="username" class="form-input">
+            <p class="error-message" id="usernameError"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" class="form-input">
+            <p class="error-message" id="emailError"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password <span class="required">*</span></label>
+            <input type="password" id="password" name="password" class="form-input">
+            <p class="error-message" id="passwordError"></p>
+
+            <div id="passwordStrength" class="password-strength hidden">
+              <div class="strength-header">
+                <span>Password strength:</span>
+                <span id="strengthText">Too weak</span>
+              </div>
+              <div class="strength-meter">
+                <div id="strengthBar" class="strength-bar"></div>
+              </div>
+              <div class="strength-requirements">
+                <ul>
+                  <li id="req1">At least 8 characters</li>
+                  <li id="req2">At least one uppercase letter</li>
+                  <li id="req3">At least one number</li>
+                  <li id="req4">At least one special character</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="button primary">Submit Form</button>
+        </form>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>Press any key, click buttons, and explore all the interactions!</p>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

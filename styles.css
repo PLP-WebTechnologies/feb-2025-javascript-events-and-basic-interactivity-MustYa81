@@ -1,0 +1,450 @@
+/* Base Styles */
+:root {
+    --primary: #9b87f5;
+    --primary-hover: #8a74e8;
+    --blue: #0EA5E9;
+    --pink: #D946EF;
+    --green: #10B981;
+    --yellow: #FBBF24;
+    --orange: #F97316;
+    --red: #EF4444;
+    --white: #FFFFFF;
+    --background: #F8FAFC;
+    --foreground: #1E293B;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --radius: 0.5rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--blue) 100%);
+    min-height: 100vh;
+    padding: 1.5rem;
+    color: var(--foreground);
+  }
+  
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  /* Header Styles */
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: white;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+    opacity: 0.9;
+  }
+  
+  /* Section Styles */
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .lab-section {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  
+  .lab-section:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lab-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .subsection h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Button Styles */
+  .button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  
+  .button.primary {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .button.primary:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .button.outline {
+    background-color: transparent;
+    border-color: var(--gray-300);
+  }
+  
+  .button-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .lab-button {
+    background-color: white;
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .hover-blue:hover {
+    background-color: var(--blue);
+    color: white;
+  }
+  
+  .hover-pink:hover {
+    background-color: var(--pink);
+    color: white;
+  }
+  
+  .hover-green:hover {
+    background-color: var(--green);
+    color: white;
+  }
+  
+  /* Key display */
+  .key-display {
+    background-color: var(--gray-100);
+    padding: 1rem;
+    border-radius: var(--radius);
+    font-family: monospace;
+    margin-top: 0.5rem;
+  }
+  
+  .hint {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    margin-top: 0.5rem;
+  }
+  
+  /* Color changing button */
+  .color-purple { background-color: var(--primary); color: white; }
+  .color-blue { background-color: var(--blue); color: white; }
+  .color-pink { background-color: var(--pink); color: white; }
+  .color-green { background-color: var(--green); color: white; }
+  .color-yellow { background-color: var(--yellow); color: black; }
+  
+  /* Secret button animations */
+  .secret-active {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--blue) 100%);
+    color: white;
+  }
+  
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Carousel */
+  .carousel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .carousel-content {
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+  
+  .carousel-item {
+    min-width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .carousel-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--gray-200);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  /* Background colors */
+  .bg-purple { background-color: var(--primary); }
+  .bg-blue { background-color: var(--blue); }
+  .bg-pink { background-color: var(--pink); }
+  .bg-green { background-color: var(--green); }
+  .bg-orange { background-color: var(--orange); }
+  
+  /* Tabs */
+  .tabs {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .tab-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+  }
+  
+  .tab-button {
+    background-color: var(--gray-200);
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .tab-content {
+    border: 1px solid var(--gray-200);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 1rem;
+    background-color: white;
+  }
+  
+  .tab-panel {
+    display: none;
+    animation: fadeIn 0.5s;
+  }
+  
+  .tab-panel.active {
+    display: block;
+  }
+  
+  /* Form Styles */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+  }
+  
+  .form-input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+  
+  .form-input.error {
+    border-color: var(--red);
+  }
+  
+  .error-message {
+    color: var(--red);
+    font-size: 0.875rem;
+  }
+  
+  .required {
+    color: var(--red);
+  }
+  
+  /* Password Strength Meter */
+  .password-strength {
+    margin-top: 0.75rem;
+  }
+  
+  .password-strength.hidden {
+    display: none;
+  }
+  
+  .strength-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .strength-meter {
+    height: 4px;
+    background-color: var(--gray-200);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .strength-bar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background-color 0.3s;
+  }
+  
+  .strength-requirements {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+  
+  .strength-requirements ul {
+    padding-left: 1.25rem;
+  }
+  
+  .requirement-met {
+    color: var(--green);
+  }
+  
+  /* Toast Notifications */
+  .toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .toast-success {
+    border-left: 4px solid var(--green);
+  }
+  
+  .toast-error {
+    border-left: 4px solid var(--red);
+  }
+  
+  .toast-info {
+    border-left: 4px solid var(--blue);
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: white;
+    opacity: 0.8;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+    
+    .button-row {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .carousel-item {
+      height: 150px;
+      font-size: 1.25rem;
+    }
+  }
